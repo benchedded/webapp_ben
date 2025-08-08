@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Epicare - Add Emergency Numbers{% endblock %}
+{% block content %}
+{% from "includes/_formHelper.html" import render_field %}
+<section class="py-5">
+    <div class="container px-5">
+        
+        <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+            <div class="text-center mb-5">
+                
+                <h1 class="display-5 fw-bolder mb-0 mx-5">
+                    <span class="text-gradient d-inline">Add Emergency Contacts</span>
+                </h1>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <form method="POST" action="">
+                        <div class="form-group my-3 fw-bolder">
+                        {{ render_field(form.emergency_num, class="form-control mt-2") }}
+                        </div>
+                        <div class="form-group my-3 fw-bolder">
+                        {{ render_field(form.contact_name, class="form-control mt-2") }}
+                        </div>
+                        <div class = 'd-grid'>
+                            <button class="btn btn-dark btn-lg mb-3 mt-3">
+                                Submit
+                            </button>
+                        </div>
+                        <div class="d-grid mt-2">
+                            <a href="{{ url_for('emergency') }}" class="btn btn-me btn-lg text-white">Cancel</a>
+                        </div>
+
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+</section>
+{% endblock %}
