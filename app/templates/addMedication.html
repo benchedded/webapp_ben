@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Epicare - Add Medication{% endblock %}
+{% block content %}
+{% from "includes/_formHelper.html" import render_field %}
+<section class="py-5">
+    <div class="container px-5">
+        <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bolder mb-0 mx-5">
+                    <span class="text-gradient d-inline">Add Medication</span>
+                </h1>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <form method="POST" action="">
+                        {{ render_field(form.medication_name, class="form-control mt-2") }}
+                        {{ render_field(form.dosage, class="form-control mt-2") }}
+                        {{ render_field(form.start_date, class="form-control mt-2") }}
+                        {{ render_field(form.end_date, class="form-control mt-2") }}
+                        {{ render_field(form.time_to_take, class="form-control mt-2") }}
+                        {{ render_field(form.frequency, class="form-control mt-2") }}
+                        
+                        {{ render_field(form.instructions, class="form-control mt-2") }}
+                        <div class="d-grid mt-4">
+                            <button class="btn btn-dark btn-lg">Add Medication</button>
+                        </div>
+                        <div class="d-grid mt-2">
+                            <a href="{{ url_for('calendar') }}" class="btn btn-secondary btn-lg">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
